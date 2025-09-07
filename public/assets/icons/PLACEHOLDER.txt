@@ -1,0 +1,1 @@
+Store UI SVG or PNG icons here for future expansion (menus, toggles, etc.).

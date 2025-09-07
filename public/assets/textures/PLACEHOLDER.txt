@@ -1,0 +1,6 @@
+Add texture assets here:
+- asphalt_diffuse.jpg
+- asphalt_roughness.jpg
+- optional: env maps / hdr / skybox faces
+
+These filenames are referenced in ParkingLot.jsx. Adjust as needed.
