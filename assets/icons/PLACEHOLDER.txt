@@ -1,0 +1,1 @@
+UI icons (SVG/PNG) go here.
