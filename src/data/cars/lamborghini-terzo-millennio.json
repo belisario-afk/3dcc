@@ -1,0 +1,56 @@
+{
+  "id": "lamborghini-terzo-millennio",
+  "displayName": "Lamborghini Terzo Millennio",
+  "brand": "Lamborghini",
+  "unveiled": 2017,
+  "type": "All-electric concept hypercar",
+  "modelFile": "/free__lamborghini_terzo_millennio.glb",
+  "driveLayout": "4 in-wheel motors (AWD)",
+  "estimated": true,
+  "stats": {
+    "topSpeed": { "value": 220, "unit": "mph", "approx": true },
+    "topSpeedKmh": { "value": 354, "unit": "km/h", "approx": true },
+    "zeroToSixty": { "value": 2.5, "unit": "s", "approx": true },
+    "horsepower": { "value": 1000, "unit": "hp", "approx": true },
+    "torque": { "value": null, "unit": "", "note": "Instant EV torque (4 motors)" },
+    "motorRpm": { "value": 20000, "unit": "RPM", "approx": true }
+  },
+  "technology": {
+    "energyStoringBodyPanels": true,
+    "selfHealingPanels": true,
+    "aeroLighting": "Y-shaped integrated LED elements",
+    "monocoqueMaterial": "Carbon fiber + nanomaterial energy layers"
+  },
+  "features": [
+    {
+      "group": "Panel & Body Tech",
+      "items": [
+        "Carbon fiber panels behave as supercapacitors for rapid energy discharge.",
+        "Self-healing micro-channel chemistry for crack mitigation.",
+        "Y-shaped aerodynamic LED body signatures.",
+        "Lightweight carbon monocoque integrates energy storage."
+      ]
+    },
+    {
+      "group": "Cockpit & Controls",
+      "items": [
+        "AR Virtual Cockpit HUD.",
+        "Ghost Car Mode: follow AI ideal lap line.",
+        "Semi-autonomous assist learning modes."
+      ]
+    }
+  ],
+  "quickTable": [
+    ["Top Speed", "~220 mph / 354 km/h"],
+    ["0–60 mph", "~2.5 sec"],
+    ["Horsepower", "1,000+ hp (theoretical)"],
+    ["Torque", "Instant EV torque"],
+    ["Motor RPM", "20,000+"],
+    ["Drive Layout", "4 in-wheel motors (AWD)"],
+    ["Body Material", "Carbon fiber w/ nanotech"],
+    ["Special Feature", "Self-healing panels"]
+  ],
+  "tags": ["concept", "electric", "hypercar", "lamborghini", "nanotech"],
+  "summary": "Concept EV hypercar showcasing structural energy storage, self-healing materials, and in-wheel propulsion.",
+  "lastUpdated": "2025-09-07"
+}

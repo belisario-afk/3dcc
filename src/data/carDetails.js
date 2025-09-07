@@ -1,65 +1,52 @@
-// NEW FILE: Structured rich detail definitions for special cars.
+// Central car details list (add more objects as needed)
 
-export const CAR_DETAILS = {
-  terzo: {
-    overview: {
-      title: 'Concept Overview',
-      bullets: [
-        'All-electric concept hypercar (Lamborghini x MIT collaboration, unveiled 2017)',
-        'Carbon fiber monocoque with energy-storing nano-material panels',
-        'Four independent in‑wheel electric motors (torque vectoring)',
-        'Next-gen energy storage: body-integrated supercapacitor technology'
+export default [
+  {
+    id: "lamborghini-terzo-millennio",
+    displayName: "Lamborghini Terzo Millennio",
+    brand: "Lamborghini",
+    unveiled: 2017,
+    type: "All-electric concept hypercar",
+    modelFile: "/free__lamborghini_terzo_millennio.glb",
+    driveLayout: "4 in-wheel motors (AWD)",
+    stats: {
+      topSpeed: "~220 mph / 354 km/h",
+      zeroToSixty: "~2.5 sec",
+      horsepower: "1,000+ hp (theoretical)",
+      torque: "Instant EV torque",
+      motorRpm: "20,000+"
+    },
+    technology: {
+      energyStoringBodyPanels: true,
+      selfHealingPanels: true,
+      aeroLighting: "Y-shaped integrated LED elements",
+      monocoqueMaterial: "Carbon fiber + nanotech"
+    },
+    features: {
+      panelBodyTech: [
+        "Carbon fiber panels act as rapid-discharge energy storage (supercapacitor-like).",
+        "Self-healing micro-channels mitigate crack propagation.",
+        "Integrated Y-shaped aerodynamic LED lighting.",
+        "Lightweight monocoque with embedded energy layers."
+      ],
+      cockpit: [
+        "AR Virtual Cockpit HUD.",
+        "Ghost Car Mode (AI ideal lap line).",
+        "Semi-autonomous assist for training / racing modes."
       ]
     },
-    performance: {
-      title: 'Performance (Projected / Concept Targets)',
-      specs: [
-        { label: 'Top Speed', value: '~220 mph (354 km/h)' },
-        { label: '0–60 mph', value: '~2.5 s (est.)' },
-        { label: 'Horsepower', value: '≈ 1,000+ hp (theoretical)' },
-        { label: 'Torque', value: 'Instant (4 electric motors)' },
-        { label: 'Motor RPM', value: '20,000+ (EV motors)' },
-        { label: 'Drivetrain', value: 'Fully electric AWD (1 motor per wheel)' }
-      ]
-    },
-    bodyTech: {
-      title: 'Body & Energy Tech',
-      bullets: [
-        'Energy-storing carbon fiber panels act as high-capacity supercapacitors',
-        'Self-healing microchannels release healing compounds to repair microcracks',
-        'Integrated Y-shaped LED aero lines & airflow sculpting surfaces',
-        'Lightweight monocoque engineered for structural energy distribution'
-      ]
-    },
-    cockpit: {
-      title: 'Cockpit & Intelligence',
-      bullets: [
-        'Augmented “Virtual Cockpit” with AR performance overlays',
-        'Ghost Lap Mode: AI projects ideal racing line to follow in real time',
-        'Adaptive semi-autonomous assist for track learning & analysis'
-      ]
-    },
-    quickTable: {
-      title: 'Quick Stats',
-      rows: [
-        ['Top Speed', '~220 mph / 354 km/h'],
-        ['0–60 mph', '~2.5 s (est.)'],
-        ['Horsepower', '≈ 1,000+ hp (concept)'],
-        ['Torque', 'Instant EV torque'],
-        ['Motor RPM', '20,000+'],
-        ['Drive Layout', '4 in‑wheel motors (AWD)'],
-        ['Body Material', 'Carbon fiber + nanotech'],
-        ['Special Feature', 'Self-healing panels']
-      ]
-    },
-    marketingBlurb:
-      'The Terzo Millennio explores Lamborghini’s vision of future hypercar energy systems—fusing supercapacitors, structural storage, self-healing composites, and AI-enhanced driving intelligence into a radical electric design.'
+    quickTable: [
+      ["Top Speed", "~220 mph / 354 km/h"],
+      ["0–60 mph", "~2.5 sec"],
+      ["Horsepower", "1,000+ hp (theoretical)"],
+      ["Torque", "Instant EV torque"],
+      ["Motor RPM", "20,000+"],
+      ["Drive Layout", "4 in-wheel motors (AWD)"],
+      ["Body Material", "Carbon fiber w/ nanotech"],
+      ["Special Feature", "Self-healing panels"]
+    ],
+    tags: ["concept", "electric", "hypercar", "lamborghini", "nanotech"],
+    summary: "Concept EV hypercar with structural energy storage and self-healing composite technology.",
+    lastUpdated: "2025-09-07"
   }
-};
-
-// Helper to get details safely.
-export function getCarDetails(selectedCar) {
-  if (!selectedCar) return null;
-  if (!selectedCar.detailsKey) return null;
-  return CAR_DETAILS[selectedCar.detailsKey] || null;
-}
+];
