@@ -8,11 +8,17 @@
     <link rel="icon" href="favicon.ico" />
     <style>
       html,body { background:#0f1114; margin:0; padding:0; }
+      #root { width:100%; height:100%; }
     </style>
   </head>
   <body>
     <div id="root">Loading application...</div>
-    <!-- RELATIVE path (no leading slash) so dev + build both work -->
-    <script type="module" src="./src/main.jsx"></script>
+    <!-- Dev entry: Vite transforms this during build into hashed JS in dist. -->
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Safety warning if the dev entry is still present after deployment (means you deployed raw source).
+      // This will not execute in production if Vite processed index.html correctly (the tag gets rewritten).
+      console.warn('[Deployment Check] If you see /src/main.jsx 404 in production, you deployed source instead of dist. Run: npm run build && npm run deploy.');
+    </script>
   </body>
 </html>
