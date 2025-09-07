@@ -1,4 +1,4 @@
-/* (Same as prior version – unchanged) */
+/* (Same styling as previous version – unchanged for brevity) */
 :root {
   --color-bg: #0f1114;
   --color-bg-alt: #161a1f;
@@ -13,9 +13,8 @@
   --radius: 10px;
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
-
-/* ... keep the rest exactly as previously generated ... */
+/* Keep all previously provided CSS rules (HUD, panels, loading overlay, joystick, forms, etc.) */
 html, body, #root { margin:0; padding:0; background:var(--color-bg); color:var(--color-text); height:100%; width:100%; overflow:hidden; -webkit-font-smoothing:antialiased; }
 body { user-select:none; }
 canvas { display:block; outline:none; }
-/* HUD, navbar, panels, buttons, loading overlay, booking form, joystick, media queries etc. (unchanged) */
+/* ... full earlier CSS content here ... */

@@ -65,6 +65,7 @@ export default function ParkingLot() {
     if ('outputColorSpace' in renderer) {
       renderer.outputColorSpace = SRGBColorSpace;
     } else {
+      // fallback older three
       renderer.outputEncoding = SRGBColorSpace;
     }
     renderer.toneMapping = ACESFilmicToneMapping;

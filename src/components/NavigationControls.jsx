@@ -133,13 +133,13 @@ export default function NavigationControls() {
       const angle = Math.atan2(dy, dx);
       const x = Math.cos(angle) * dist;
       const y = Math.sin(angle) * dist;
-      stick.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+      stickRef.current.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
       joystickVector.current.x = x / 40;
       joystickVector.current.y = y / 40;
     };
     const end = () => {
       joystickActive.current = false;
-      stick.style.transform = 'translate(-50%, -50%)';
+      stickRef.current.style.transform = 'translate(-50%, -50%)';
       joystickVector.current.x = 0;
       joystickVector.current.y = 0;
     };
