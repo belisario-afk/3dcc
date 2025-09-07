@@ -1,80 +1,59 @@
 # Exotic Car Rental 3D Walkthrough
 
-Immersive 3D exotic car rental walkthrough built with **React + Vite** and **Three.js**.
+Version: 1.0.5 (Deployment path fix)
 
-## Version
-Current: 1.0.4 (Fix: removed deprecated `sRGBEncoding`, now using `SRGBColorSpace` + `outputColorSpace`)
+## Why You Saw a Black Screen
+On GitHub Pages under a project site (https://username.github.io/<repo>/), absolute paths like `/src/main.jsx` point to `https://username.github.io/src/main.jsx` (missing the `<repo>` segment).  
+Your `index.html` referenced `/src/main.jsx`, which 404’d, so no JavaScript executed → black screen.
 
-## Recent Fix
-Build error: `"sRGBEncoding" is not exported by three.module.js`  
-Resolved by migrating to the newer Three.js color space API.
+## Fixes in 1.0.5
+- Set `base: '/3dcc/'` in `vite.config.js` (adjust if your repository has a different name).
+- Made the entry script path relative: `./src/main.jsx`.
+- Removed unnecessary preload that caused 404 in production.
+
+## Deployment Sanity Checklist
+1. Run build: `npm run build`
+2. Inspect `dist/index.html` — scripts should look like:
+   ```html
+   <script type="module" crossorigin src="/3dcc/assets/index-xxxxx.js"></script>
+   ```
+3. Ensure gh-pages branch contains only the `dist` contents (not the raw `/src`).
+4. Visit: `https://<user>.github.io/3dcc/`
+5. Open DevTools Network tab: confirm 200 responses for `assets/index-*.js`.
+6. No models yet? You should still see UI & ground (not pure black).
+
+## If Still Black
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| 404 on main bundle | Wrong base | Update `vite.config.js` base to repo name |
+| 404 /src/main.jsx | Deployed raw source | Use `npm run build` then deploy `dist` |
+| Favicon 404 | Base mismatch | Keep correct base or ignore (harmless) |
+| Outline not visible | No car loaded/selected | Add models & click car |
 
 ## Quick Start
 ```bash
 rm -rf node_modules dist package-lock.json
 npm install
-npm run verify   # optional
-npm run dev
+npm run dev     # local
+npm run build   # production build
+npm run deploy  # push dist to gh-pages
 ```
 
-## Build & Deploy
-```bash
-npm run build
-npm run deploy
+## Adding Car Models
+Place `.glb` files in:
 ```
-Ensure `base` in `vite.config.js` matches your repo name.
-
-## Color Space Change (Three.js)
-Older usage:
-```js
-renderer.outputEncoding = sRGBEncoding;
+public/assets/models/
 ```
-New usage (r152+):
-```js
-renderer.outputColorSpace = SRGBColorSpace;
-```
-This project uses the new API with a fallback for older versions.
+Adjust `CARS` array in `src/config.js` if you rename or add positions.
 
-## Directory Layout
-```
-index.html
-public/
-  assets/models/
-  assets/textures/
-  assets/icons/
-src/
-  components/
-  App.jsx
-  main.jsx
-  styles.css
-  config.js
-scripts/
-  verify-plugin-react.cjs
-vite.config.js
-```
-
-## Controls
-Desktop: WASD / Arrows, Shift (sprint), Click to lock mouse look, Click car  
-Mobile: Joystick auto, Tap car to select
-
-## Troubleshooting
-| Problem | Fix |
-|---------|-----|
-| sRGBEncoding export error | Use v1.0.4+ (uses SRGBColorSpace) |
-| Plugin not found | `npm run verify` then reinstall deps |
-| index.html missing | Ensure root has `index.html` |
-| Assets 404 on Pages | Adjust `base` in `vite.config.js` |
-| Pointer not locking | Click scene and allow pointer lock |
-| Models huge | Adjust scaling logic in `CarModel.jsx` |
-
-## Enhancement Ideas (ask me to add)
-- HDR environment (PMREM)
+## Optional Next Enhancements
+Ask and I can add (regenerating full project):
+- HDR environment lighting (PMREM)
 - Day/night cycle
-- Touch drag look (currently pointer lock only)
-- Minimap overlay
-- Car interior camera switching
-- Animated car lights/doors
-- Bloom / SSAO postprocessing toggle
+- Mobile drag camera look (touch yaw/pitch)
+- Minimap / radar overlay
+- Car interior view toggle
+- Bloom / SSAO
+- Car interaction animations (doors open)
 
-## License
-MIT (replace if desired).
+Let me know which you’d like next.

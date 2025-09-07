@@ -51,8 +51,7 @@ export default function CarModel({ car, scene, camera, outlineObjects, loadingMa
             bbox.getSize(size);
             const maxDim = Math.max(size.x, size.y, size.z);
             if (maxDim > 0) {
-              const desired = 3.4;
-              gltf.scene.scale.setScalar(desired / maxDim);
+              gltf.scene.scale.setScalar(3.4 / maxDim);
             }
             const bbox2 = new Box3().setFromObject(gltf.scene);
             gltf.scene.position.y -= bbox2.min.y;

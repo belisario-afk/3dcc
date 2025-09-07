@@ -1,6 +1,6 @@
 {
   "name": "exotic-car-rental-3d",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "type": "module",
   "description": "3D immersive exotic car rental walkthrough built with React, Vite, and Three.js",

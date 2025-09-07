@@ -62,11 +62,9 @@ export default function ParkingLot() {
     window.__THREE_SCENE = scene;
 
     const renderer = new WebGLRenderer({ antialias: true, alpha: false });
-    // New color space property (Three r152+)
     if ('outputColorSpace' in renderer) {
       renderer.outputColorSpace = SRGBColorSpace;
     } else {
-      // Backward compatibility if an older three version is used
       renderer.outputEncoding = SRGBColorSpace;
     }
     renderer.toneMapping = ACESFilmicToneMapping;
